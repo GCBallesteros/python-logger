@@ -1,26 +1,28 @@
+"""Potential log attributes and their names"""
+
 from colorama import Fore
 
 LOG_ATTRIBUTES_TO_NAME_AND_FORMAT_AND_COLOR_DICT = {
-    "asctime": ("timestamp", "s", Fore.YELLOW),
+    "args": (None, None, Fore.WHITE),
     "created": (None, "f", Fore.YELLOW),
-    "msecs": (None, "d", Fore.YELLOW),
-    "relativeCreated": (None, "d", Fore.YELLOW),
-    "name": (None, "s", Fore.MAGENTA),
-    "levelname": (None, "s", Fore.RED),
-    "levelno": (None, "d", Fore.RED),
+    "exc_info": (None, None, Fore.BLACK),
+    "exc_text": (None, None, Fore.BLACK),
     "pathname": (None, "s", Fore.CYAN),
-    "filename": (None, "s", Fore.CYAN),
-    "lineno": (None, "d", Fore.CYAN),
+    "levelno": (None, "d", Fore.RED),
+    "msecs": (None, "d", Fore.YELLOW),
+    "thread": (None, "d", Fore.LIGHTBLUE_EX),
+    "threadName": (None, "s", Fore.LIGHTBLUE_EX),
+    "relativeCreated": (None, "d", Fore.YELLOW),
+    "stack_info": (None, None, Fore.BLACK),
     "module": (None, "s", Fore.BLUE),
     "funcName": (None, "s", Fore.BLUE),
     "process": (None, "d", Fore.LIGHTGREEN_EX),
     "processName": (None, "s", Fore.LIGHTGREEN_EX),
-    "thread": (None, "d", Fore.LIGHTBLUE_EX),
-    "threadName": (None, "s", Fore.LIGHTBLUE_EX),
-    "exc_info": (None, None, Fore.BLACK),
-    "exc_text": (None, None, Fore.BLACK),
-    "stack_info": (None, None, Fore.BLACK),
-    "args": (None, None, Fore.WHITE),
+    "asctime": ("timestamp", "s", Fore.YELLOW),
+    "name": (None, "s", Fore.MAGENTA),
+    "levelname": (None, "s", Fore.RED),
+    "filename": (None, "s", Fore.CYAN),
+    "lineno": (None, "d", Fore.CYAN),
 }
 # "msg" and "message" are excluded on purpose
 
@@ -32,12 +34,12 @@ DEFAULT_IGNORE_ATTRIBUTE_LIST = [
     "pathname",
     "levelno",
     "msecs",
+    "threads",
+    "threadName",
     "relativeCreated",
     "stack_info",
     "module",
     "funcName",
-    "thread",
-    "threadName",
     "process",
     "processName",
 ]

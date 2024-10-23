@@ -51,10 +51,8 @@ def main():
     demo_function(1, 2, 3, kwarg_1="Demo value 1", kwarg_2="Demo value 2")
     logger.info("Logging umlauts: ä ö ü ß")
 
-    NL.start_mp(logger)
     with ThreadPool(processes=3) as pool:
         pool.map(pool_log_number, range(6))
-    NL.end_mp(logger)
 
     try:
         event_loop.run_until_complete(async_function(number=3))

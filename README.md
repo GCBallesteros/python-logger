@@ -31,7 +31,6 @@ $ pip install NeatLogger
     * `assign_logger_name`: Flag to decide whether to assign `project_name` as the name to the logger.
     * `formatter`: Logging formatter. Choices:
         * an instance of `logging.Formatter`
-        * `"json"`
         * `"apache"`
     * `log_to_stdout`: Flag to decide whether to display the logs in stdout.
     * `log_to_file`: Flag to decide whether to store the logs in a file.
@@ -74,7 +73,3 @@ $ pip install NeatLogger
     logger = log.get_logger()
     logger.info("Testing 1 2 3 ...")
     ```
-
-## Author
-
-**&copy; 2021, [Samyak Tamrakar](https://www.linkedin.com/in/srtamrakar/)**.

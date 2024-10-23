@@ -5,16 +5,12 @@ from . import configs, utils
 
 
 class Apache(logging.Formatter):
-    converter = datetime.fromtimestamp
+    """Apache style log formatter"""
 
-    def __init__(self, fmt=None, datefmt=None, style="%", *args, **kwargs):
-
-        self.use_utc = kwargs.pop("use_utc", False)
+    def __init__(self, fmt: str | None = None, datefmt=None, style="%", *_, **kwargs):
         self.add_colors = kwargs.pop("add_colors", False)
         self.ignore_log_attribute_list = kwargs.pop("ignore_log_attribute_list", None)
-        self.timezone = (
-            timezone.utc if self.use_utc is True else datetime.now().astimezone().tzinfo
-        )
+        self.timezone = timezone.utc
 
         if self.ignore_log_attribute_list is None:
             self.ignore_log_attribute_list = configs.DEFAULT_IGNORE_ATTRIBUTE_LIST
@@ -30,11 +26,12 @@ class Apache(logging.Formatter):
 
         super().__init__(fmt=log_format, datefmt=datefmt, style=style)
 
-    def formatTime(self, record, datefmt=None):
+    def formatTime(self, record, datefmt=None) -> str:
         """Override: logging.Formatter.formatTime"""
-        ct = self.converter(record.created)
         if datefmt is not None:
-            s = ct.strftime(datefmt)
+            s = datetime.fromtimestamp(record.created, tz=self.timezone).strftime(
+                datefmt
+            )
         else:
-            s = datetime.fromtimestamp(record.created, tz=self.timezone)
+            s = str(datetime.fromtimestamp(record.created, tz=self.timezone))
         return s

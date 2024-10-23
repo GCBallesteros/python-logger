@@ -4,6 +4,9 @@ Convenient wrapper for logging python applications with options to add color, se
 > [!NOTE]
 > This a modernized and cleaned up fork of  [NeatLogger](https://github.com/srtamrakar/python-logger)
 
+One of the nicer features is that the creation of a logger is idempotent. This
+means that a logger can be created multiple times, together with the addition
+of handlers, without worrying about duplicate log lines.
 
 ## Install with pip
 ```bash
@@ -13,10 +16,10 @@ $ pip install NeatLogger
 ## Usage
 1. Import the library.
     ```python
-    from NeatLogger import Log
+    from neat_logger import Log
     ```
 
-1. Create an instance.
+2. Create an instance.
     ```python
     log = Log()
     ```
@@ -69,7 +72,7 @@ $ pip install NeatLogger
     1. `rotate_file_by_time`
     1. `log_to_file`
 
-1. Get a logger and start logging.
+3. Get a logger and start logging.
     ```python
     logger = log.get_logger()
     logger.info("Testing 1 2 3 ...")

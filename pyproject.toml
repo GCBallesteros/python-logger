@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "neat-logger"
 version = "0.1.0"
-description = ""
+description = "A simple logger"
 authors = ["Guillem Ballesteros <guillem@maxwellrules.com>"]
 license = "MIT"
 readme = "README.md"

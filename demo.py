@@ -1,9 +1,11 @@
+"""An example showcasing a few of the features of Neat Logger"""
+
 import asyncio
 import time
 from multiprocessing.pool import ThreadPool
 
-from NeatLogger import Log
-from NeatLogger.Formatter.configs import DEFAULT_IGNORE_ATTRIBUTE_LIST
+from neat_logger import Log
+from neat_logger.Formatter.configs import DEFAULT_IGNORE_ATTRIBUTE_LIST
 
 ignore_log_attribute_list = DEFAULT_IGNORE_ATTRIBUTE_LIST.copy()
 ignore_log_attribute_list.remove("threadName")
@@ -32,7 +34,7 @@ def demo_function(arg_1=None, arg_2=None, *args, **kwargs):
 
 async def square(number: int) -> int:
     logger.info(f"Async calculating square of {number} ...")
-    number_squared = number ** 2
+    number_squared = number**2
     await asyncio.sleep(number_squared)
     logger.info(f"{number}^2 = {number_squared}")
     return number_squared

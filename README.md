@@ -1,8 +1,9 @@
-# NeatLogger
+# Neat Logger
 Convenient wrapper for logging python applications with options to add color, select logging style, rotate files by size and time, etc.
 
-Output from [`demo.py`](https://github.com/srtamrakar/python-logger/blob/master/demo.py):
-![demo logs](https://raw.githubusercontent.com/srtamrakar/python-logger/master/docs/demo-logs.png)
+> [!NOTE]
+> This a modernized and cleaned up fork of  [NeatLogger](https://github.com/srtamrakar/python-logger)
+
 
 ## Install with pip
 ```bash
